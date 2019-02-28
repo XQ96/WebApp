@@ -26,5 +26,3 @@ def init():
 loop=asyncio.get_event_loop()
 loop.run_until_complete(init())
 loop.run_forever()
-
-#异步协程任务
