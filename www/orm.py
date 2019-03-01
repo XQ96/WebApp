@@ -43,7 +43,7 @@ async def create_pool(loop,**kw):
         async def execute(sql,args,autocommit=True):
             log(sql)
             async with __pool.get() as conn:
-                if not qutocommit:
+                if not autocommit:
                     await conn.begin()
                 try:
                     async with conn.cursor(aiomysql.DictCursor) as cur:
